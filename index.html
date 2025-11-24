@@ -1605,10 +1605,13 @@
                 // Add refreshing animation
                 document.querySelector('.main-container').classList.add('refreshing');
 
+                // Cache-busting: Add timestamp to bypass GitHub's CDN cache
+                const cacheBuster = `?t=${Date.now()}`;
+
                 // Fetch both YAML files
                 const [workflowResponse, sprintResponse] = await Promise.all([
-                    fetch(`${DATA_PATH}bmm-workflow-status.yaml`),
-                    fetch(`${DATA_PATH}sprint-status.yaml`)
+                    fetch(`${DATA_PATH}bmm-workflow-status.yaml${cacheBuster}`),
+                    fetch(`${DATA_PATH}sprint-status.yaml${cacheBuster}`)
                 ]);
 
                 if (!workflowResponse.ok || !sprintResponse.ok) {
