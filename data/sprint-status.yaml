@@ -43,7 +43,7 @@ development_status:
 
   # Core Epic A Stories (from epics.md)
   a-1-flutter-mobile-app-shell-navigation:backlog
-  a-2-mobile-schema-rendering-engine: done
+  a-2-mobile-schema-rendering-engine: backlog
   a-3-offline-first-architecture: done
   a-4-photo-capture-photo-pair-workflow: done
   a-5-mobile-annotation-system: done
