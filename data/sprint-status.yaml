@@ -166,8 +166,8 @@ development_status:
   # Story C.3: Repeatable Sections + Multi-Probe (SPLIT into 4 substories - 12 days → 14 days total → 25 days with C.3a-1 refactor)
   # OFFLINE-FIRST: Added offline CRUD, sync conflict resolution, auto-save (AC-C.3b.8-12) to C.3b
   c-3a-core-repeatable-section: done  # 3 days, P0 - Ready for Code Review (129 tests passing, 0 TS errors, all ACs implemented)
-  c-3a-1-template-builder-store-refactor: in-progress  # 11 days (2.2 weeks), P0 CRITICAL - Refactor 2.8k LOC monolith → composable slices. BLOCKS C.3b-C.6. Execute immediately after C.3a DONE. 7 ACs, 6 phases, 255 tests, zero data loss guarantee, gradual rollout. Sprint Change Proposal APPROVED 2025-11-25. Story context generated 2025-11-25.
-  c-3b-mobile-ui-components: backlog  # 3 days → 5 days (+2 for offline-first), P0 CRITICAL - SQLite storage, sync conflicts, auto-save (BLOCKED by C.3a-1)
+  c-3a-1-template-builder-store-refactor: done  # ✅ APPROVED 2025-11-25: 7/7 ACs complete. 174+ tests passing. Sliced architecture production-ready. Monolith archived. ADR-002 + CLAUDE.md updated. Note: Task 6.7 (archive partial slices) BLOCKED - canonical field stores still in use, requires separate cleanup story.
+  c-3b-mobile-ui-components: in-progress  # 3 days → 5 days (+2 for offline-first), P0 CRITICAL - SQLite storage, sync conflicts, auto-save
   c-3c-compliance-multi-probe: backlog  # 4 days, P0 REGULATORY
   c-3d-pdf-audit-trail: backlog  # 2 days, P0
 
