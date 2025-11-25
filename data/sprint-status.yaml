@@ -147,8 +147,8 @@ development_status:
   # OFFLINE-FIRST: Added virtual scrolling performance (AC-C.1.19) to C.1f
 
   c-1f-flutter-web-preview-parity: done  # ✅ COMPLETED 2025-11-23: All code review blockers resolved. Performance tests 16/16 passing (6-53ms render, 4-20ms updates), E2E test suite created (12 test cases), visual validation automated, 1 critical bug fix (ES imports). Code quality 5/5 stars. 9/9 ACs verified. Production-ready.
-  c-1a-immer-middleware: in-progress  # 1 day, P0 CRITICAL - State safety foundation - Context generated 2025-11-23
-  c-1b-type-safety: backlog  # 1 day, P0 - MERGED into B1-7d per proposal
+  c-1a-immer-middleware: done  # ✅ COMPLETED 2025-11-24: All 13 tasks done. 46/46 tests passing (100%), build successful (20.4s), performance 796ms for 1000 fields (<5s target). All ACs achieved except AC #8 (2 TypeScript middleware type errors - Zustand limitation). Approved and marked done.
+  c-1b-type-safety: done  # 1 day, P0 - MERGED into B1-7d per proposal
 
   # ============================================================
   # PHASE 2: Konva Canvas Visualization Infrastructure (5-6 days)
@@ -156,9 +156,9 @@ development_status:
   # Dependencies: Phase 1 complete (C.1f, C.1a)
   # Feature flag: useKonvaCanvas (defaults false for gradual rollout)
 
-  c-1d-konva-canvas-foundation: backlog  # 3 days, P1 - 4-layer architecture (PDF, Fields, Annotations, UI)
-  c-1c-dnd-kit-integration: backlog  # 2 days, P1 - Enhanced DND + keyboard nav (WCAG 2.1 AA)
-  c-1e-framer-motion-polish: backlog  # 1 day, P2 OPTIONAL - DEFERRED (can skip if timeline tight)
+  c-1d-konva-canvas-foundation: done  # ✅ APPROVED 2025-11-24 (Code Review): All 10 ACs verified, 18/18 tasks complete, 26/26 tests passing (100%), 0 TypeScript errors. Quality: 5/5 stars. 4-layer Konva canvas (PDF, Fields, Annotations, UI), zoom/pan (50%-150%), coordinate conversion (Y-flip), performance optimization (caching, delegation, retina), feature flag (defaults false), Immer integration. Zero findings. Production-ready. Unblocks C.1c (DND Kit) and C.6a (PDF Annotations).
+  c-1c-dnd-kit-integration: done  # ✅ APPROVED 2025-11-24 (Follow-Up Review): All critical blockers resolved. Test coverage: 37/37 tests passing (185% of requirement). TypeScript: 0 errors. WCAG: axe-core 0 violations. Build: successful. Quality: EXCELLENT ⭐⭐⭐⭐⭐. Production-ready. Unblocks Story C.1e.
+  c-1e-framer-motion-polish: review  # 🔴 BLOCKED 2025-11-24 (Code Review): 3 HIGH severity blockers - (1) 16 TypeScript errors in use-animated-toast.ts (AC #8 violated), (2) 26/71 tests failing (37% failure rate), (3) 2/8 ACs missing (AC #1, #3 - Canvas constraint). Implementation: 6/8 ACs attempted, 180+ test assertions, 4 new files. Review outcome: BLOCKED - must fix TypeScript errors and test failures before approval. P2 OPTIONAL story.
 
   # Story C.2: Template Versioning (DONE)
   c-2-template-versioning-and-migration: backlog
