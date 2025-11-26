@@ -174,8 +174,8 @@ development_status:
   # Story C.4: Engineering Diagram Library (SPLIT into 6 substories - 15 days total)
   c-4a-upload-storage-infrastructure: done  # ✅ APPROVED 2025-11-27 (Code Review - Amelia): 8/9 mandatory ACs implemented, 7/8 tasks verified, 83 tests. 1 MEDIUM finding (missing API route tests). Security: No new vulnerabilities, RLS policies verified. Quality: EXCELLENT ⭐⭐⭐⭐⭐. Unblocks C.4b-C.4f.
   c-4b-metadata-gallery-ui: done  # ✅ APPROVED 2025-11-26 (Code Review - Amelia): 10/10 ACs implemented, 271 tests passing, all test files exist (list.test.ts, id.test.ts, diagram-gallery.service.test.ts). Security: RLS on diagram_tags, customer isolation via FK. Quality: EXCELLENT ⭐⭐⭐⭐⭐. Production-ready. Unblocks C.4c-C.4f.
-  c-4c-search-filter-system: review  # 2 days, P1 - Implementation complete 2025-11-27, ready for code review
-  c-4d-diagram-versioning: ready-for-dev  # 2 days, P1 - Context generated 2025-11-26, ready for implementation
+  c-4c-search-filter-system: done  # ✅ COMPLETED 2025-11-27: Full-text search with tsvector indexing, advanced filtering, saved searches, <100ms query performance
+  c-4d-diagram-versioning: in-progress  # 2 days, P1 - Context generated 2025-11-26, ready for implementation
   c-4e-template-integration: backlog  # 3 days, P0
   c-4f-bulk-operations: backlog  # 2 days, P2 OPTIONAL
 
