@@ -172,9 +172,9 @@ development_status:
   c-3d-pdf-audit-trail: done  # ✅ CONDITIONAL PASS 2025-11-25 (Code Review - Senior Dev): Systematic validation complete. 90-95% functionally complete, all 10 ACs implemented (8 fully complete, 2 partial). Implementation: Audit trail service (942 lines), PDF repeatable section rendering (AC #1-2), offline mobile PDF service (AC #8), RLS policies on 4 tables (AC #10), UI components (AuditTrailViewer, ProbeComplianceDashboard), database migration (290 lines), TypeScript 0 errors in C.3d scope ✅. Quality gates PASS (TypeScript, architecture compliance, security implementation). Test failures: 15/15 security tests failing due to test setup issues (NOT implementation gaps). Follow-up story C.3d-1 required for test stabilization (0.5-1 day, P0 CRITICAL). Production-ready for feature usage. See review in story file.
 
   # Story C.4: Engineering Diagram Library (SPLIT into 6 substories - 15 days total)
-  c-4a-upload-storage-infrastructure: backlog  # 3 days, P0
-  c-4b-metadata-gallery-ui: backlog  # 3 days, P0
-  c-4c-search-filter-system: backlog  # 2 days, P1
+  c-4a-upload-storage-infrastructure: done  # ✅ APPROVED 2025-11-27 (Code Review - Amelia): 8/9 mandatory ACs implemented, 7/8 tasks verified, 83 tests. 1 MEDIUM finding (missing API route tests). Security: No new vulnerabilities, RLS policies verified. Quality: EXCELLENT ⭐⭐⭐⭐⭐. Unblocks C.4b-C.4f.
+  c-4b-metadata-gallery-ui: done  # ✅ APPROVED 2025-11-26 (Code Review - Amelia): 10/10 ACs implemented, 271 tests passing, all test files exist (list.test.ts, id.test.ts, diagram-gallery.service.test.ts). Security: RLS on diagram_tags, customer isolation via FK. Quality: EXCELLENT ⭐⭐⭐⭐⭐. Production-ready. Unblocks C.4c-C.4f.
+  c-4c-search-filter-system: review  # 2 days, P1 - Implementation complete 2025-11-27, ready for code review
   c-4d-diagram-versioning: backlog  # 2 days, P1
   c-4e-template-integration: backlog  # 3 days, P0
   c-4f-bulk-operations: backlog  # 2 days, P2 OPTIONAL
@@ -244,24 +244,26 @@ development_status:
   epic-d: backlog
 
   # Story D.1: Mandatory Safety Checklist Workflow (BROKEN DOWN)
-  # Original: 11 days (2 weeks + 1 day) → New: 10 days (4 substories)
-  d-1a-core-checklist-ui-navigation: backlog  # 3 days, P0 CRITICAL - 13-page wizard UI
-  d-1b-workflow-enforcement-validation: backlog  # 2 days, P0 CRITICAL - Blocking logic + validation
+  # Original: 10 days → Updated: 13 days per SCP-2025-11-26-EPIC-D-SWMS
+  # Changes: +Team Members, +Equipment Table, +Hazards Grid, +Job Step Signatures, +Deviation JSA
+  d-1a-core-checklist-ui-navigation: backlog  # 5 days (was 3d, +2d for new SWMS fields), P0 CRITICAL - 12-page wizard UI, Team Members, Equipment Table, Hazards Grid, Job Step Signatures
+  d-1b-workflow-enforcement-validation: backlog  # 3 days (was 2d, +1d for deviation logic), P0 CRITICAL - Blocking logic + validation + Supervisor Sign-off + Deviation JSA
   d-1c-offline-operation-autosave: backlog  # 3 days, P0 CRITICAL - Template caching + auto-save
   d-1d-gps-signature-offline-support: backlog  # 2 days, P0 CRITICAL - Offline GPS + signature sync
 
-  # Story D.2: Risk Matrix Assessment (NO BREAKDOWN - Well-scoped)
-  d-2-risk-matrix-assessment: backlog  # 5 days, P0 CRITICAL - 5x5 grid + escalation rules
+  # Story D.2: Risk Matrix Assessment (UPDATED per SCP-2025-11-26-EPIC-D-SWMS)
+  # CRITICAL: Uses LOOKUP TABLE not P x C multiplication - see architecture docs
+  d-2-risk-matrix-assessment: backlog  # 6.5 days (was 5d, +1.5d for lookup table), P0 CRITICAL - 5x5 grid with pre-calculated lookup (NOT P×C), dual risk (Initial + Residual), color-coded (Red 1-6, Yellow 7-15, Green 16-25)
 
-  # Story D.3: Digital Signature & GPS Capture (BROKEN DOWN)
-  # Original: 5 days (1 week) → New: 5 days (2 substories)
-  d-3a-digital-signature-capture: backlog  # 3 days, P0 CRITICAL - Canvas + PIN + immutability
+  # Story D.3: Digital Signature & GPS Capture (BROKEN DOWN + UPDATED per SCP-2025-11-26-EPIC-D-SWMS)
+  # Original: 5 days → Updated: 6 days (+1d for Post-Work Review declarations)
+  d-3a-digital-signature-capture: backlog  # 4 days (was 3d, +1d for Post-Work Review), P0 CRITICAL - Canvas + PIN + immutability + Post-Work Review declarations (2 checkboxes + initials before signature)
   d-3b-gps-location-capture: backlog  # 2 days, P0 CRITICAL - GPS stamping + fallback
 
-  # Story D.4: Safety Checklist Management (BROKEN DOWN)
-  # Original: 7-8 days (1.5 weeks) → New: 7 days (3 substories)
-  d-4a-template-builder-ui-extension: backlog  # 3 days, P1 - Builder UI + rich text editor
-  d-4b-field-configuration-validation: backlog  # 2 days, P1 - Risk matrix + escalation + signature config
+  # Story D.4: Safety Checklist Management (BROKEN DOWN + UPDATED per SCP-2025-11-26-EPIC-D-SWMS)
+  # Original: 7 days → Updated: 8.5 days (+1.5d for new field types)
+  d-4a-template-builder-ui-extension: backlog  # 4.5 days (was 3d, +1.5d for new field types), P1 - Builder UI + equipment_permits_table + hazards_grid + job_step_table field types
+  d-4b-field-configuration-validation: backlog  # 2 days, P1 - Risk matrix lookup config (read-only) + escalation + signature config
   d-4c-version-control-assignment: backlog  # 2 days, P1 - Versioning + job type assignment
 
   # Story D.5: Safety Compliance Dashboard (BROKEN DOWN)
@@ -276,7 +278,24 @@ development_status:
   d-9-implement-gps-stamp-field: backlog  # 1 day, P2
   d-10-implement-guidance-page-field: backlog  # 1 day, P2
 
+  # Story D.11: PDF Report Generation & SWMS Layout Fidelity [NEW - SCP-2025-11-26-EPIC-D-SWMS]
+  d-11-pdf-report-generation-swms-layout: backlog  # 3 days, P1 - 12-page PDF matching Noble Engineering SWMS format, risk matrix visual rendering, data injection, PDF metadata
+  # Dependencies: D.1a, D.1b, D.2, D.3 complete
+  # Created: 2025-11-26 via SCP-2025-11-26-EPIC-D-SWMS
+
   epic-d-retrospective: optional
+
+  # ============================================================
+  # Epic D Change Log
+  # ============================================================
+  # SCP-2025-11-26-EPIC-D-SWMS (APPROVED 2025-11-26 by divytyroon):
+  # - Source: Noble Engineering SWMS PDF (Doc ID 10839.103) - 12 pages, not 13
+  # - CRITICAL: Risk matrix uses LOOKUP TABLE not P×C multiplication
+  # - 5 stories modified: D.1a (+2d), D.1b (+1d), D.2 (+1.5d), D.3 (+1d), D.4 (+1.5d)
+  # - 1 new story added: D.11 (3d) - PDF Report Generation
+  # - Total effort delta: +10 days (16d → 26d)
+  # - New components: TeamMembersInput, EquipmentPermitsTable, GenericHazardsGrid,
+  #   JobStepSignatureRow, DeviationJSAForm, PostWorkReviewForm, SWMSPdfGenerator
 
   # Epic E: Inspection Assignment & Collaboration - HYBRID MODEL
   # ============================================================
