@@ -190,7 +190,7 @@ development_status:
   # Advanced tools (Polyline, Freehand, Measurement) deferred to next sprint
 
   c-6a-pdf-core-annotation-flattening: done  # ✅ DONE 2025-11-27: Arrow, Circle, Text tools + pdf-lib flattening. 54 tests passing. CAT-789 E2E + manual PDF reader verification DEFERRED per user decision.
-  c-6b-pdf-advanced-annotation-tools: drafted  # Polyline, Freehand, Measurement tools (was DEFERRED, now active)
+  c-6b-pdf-advanced-annotation-tools: done  # ✅ DONE 2025-11-27: All review follow-ups resolved. 145 tests passing. Canvas integration, polyline edit mode, measurement UX, touch gestures complete.
 
   # Story C.7: DELETED (merged into C.1a)
   # Story C.8: TARP Bidirectional Cascade (NO CHANGES - blocked by C.13)
@@ -198,11 +198,11 @@ development_status:
 
   # Story C.9: MERGED into C.8
   # Story C.10: JSON Schema Foundation (NO CHANGES - 2 days)
-  c-10-json-schema-foundation: backlog  # 2 days, P0
+  c-10-json-schema-foundation: done  # ✅ DONE 2025-11-27: 252 tests pass, review fixes applied (network test isolation + canvas mock)
 
   # Story C.11: MERGED into C.1a (Immer Middleware)
   # Story C.12: Runtime Validation (NO CHANGES - 3 days)
-  c-12-runtime-validation: backlog  # 3 days, P0, Blocked by C.10
+  c-12-runtime-validation: drafted  # 3 days, P0, ✅ UNBLOCKED (C.10 done) - Story drafted 2025-11-27 with debounced validation, inline errors, section summaries, publish gate
 
   # Story C.13: Flutter Schema Adapter (2 days → 3 days)
   # OFFLINE-FIRST: Added template caching + Isolate parsing (AC-C.13.10-14)
@@ -218,18 +218,18 @@ development_status:
   c-15-biometric-authentication: backlog  # 3 days, P2, Blocked by C.14
 
   # Story C.16: Equipment Admin Panel (NO CHANGES - 5 days)
-  c-16-equipment-admin-panel: backlog  # 5 days, P0, Blocked by Epic B1
+  c-16-equipment-admin-panel: backlog  # 5 days, P0 - Epic B1 COMPLETE, NOW UNBLOCKED
 
   # Story C.17: Hierarchical Inspection Table (SPLIT into 4 substories - 9 days → 11 days total)
   # OFFLINE-FIRST: Added component caching (330 items), delta sync (AC-C.17c.8-11) to C.17c
-  c-17a-field-schema-backend-api: backlog  # 2 days, P0, Blocked by Epic B1
+  c-17a-field-schema-backend-api: backlog  # 2 days, P0, Blocked by C.16
   c-17b-column-builder-web: backlog  # 3 days, P0
   c-17c-mobile-responsive-table: backlog  # 2 days → 4 days (+2 for component caching), P0 CRITICAL - Offline component picker, 330-item cache
   c-17d-epic-b1-integration: backlog  # 2 days, P0
 
   # Story C.18: DELETED (QR Code removed per Sprint Change Proposal 2025-11-17)
   # Story C.19: TYROON Excel Import (SPLIT into 5 substories - 12 days total)
-  c-19a-excel-parser-validation: backlog  # 3 days, P0, Blocked by Epic B1
+  c-19a-excel-parser-validation: backlog  # 3 days, P0, Blocked by C.16
   c-19b-import-preview-ui: backlog  # 2 days, P0
   c-19c-import-execution-conflict: backlog  # 3 days, P0
   c-19d-excel-export-roundtrip: backlog  # 2 days, P1
@@ -451,4 +451,3 @@ development_status:
   i-6-mobile-app-deployment: backlog  # 3-4 hrs, P0 CRITICAL, Dependencies: I.5b
 
   epic-i-retrospective: optional  # Run after each release cycle
-
