@@ -202,7 +202,7 @@ development_status:
 
   # Story C.11: MERGED into C.1a (Immer Middleware)
   # Story C.12: Runtime Validation (NO CHANGES - 3 days)
-  c-12-runtime-validation: drafted  # 3 days, P0, ✅ UNBLOCKED (C.10 done) - Story drafted 2025-11-27 with debounced validation, inline errors, section summaries, publish gate
+  c-12-runtime-validation: in-progress  # 3 days, P0, ✅ Context generated 2025-11-27 - Debounced validation, inline errors, section summaries, publish gate. Review fixes applied 2025-11-27: validateField for blur, auto section aggregation, validationMode persistence, UI perf tests.
 
   # Story C.13: Flutter Schema Adapter (2 days → 3 days)
   # OFFLINE-FIRST: Added template caching + Isolate parsing (AC-C.13.10-14)
