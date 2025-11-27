@@ -189,8 +189,8 @@ development_status:
   # Focus: 3 primary tools only (Arrow, Circle, Text) for PDF flattening
   # Advanced tools (Polyline, Freehand, Measurement) deferred to next sprint
 
-  c-6a-pdf-core-annotation-flattening: ready-for-dev  # 3 days, P1 - Arrow, Circle, Text tools + pdf-lib flattening + CAT-789 validation + Konva canvas animations (C.1e AC#1 Field Add/Remove, AC#3 Drag Preview - use Konva.Tween API)
-  c-6b-pdf-advanced-annotation-tools: backlog  # DEFERRED to next sprint - Polyline, Freehand, Measurement tools
+  c-6a-pdf-core-annotation-flattening: done  # ✅ DONE 2025-11-27: Arrow, Circle, Text tools + pdf-lib flattening. 54 tests passing. CAT-789 E2E + manual PDF reader verification DEFERRED per user decision.
+  c-6b-pdf-advanced-annotation-tools: drafted  # Polyline, Freehand, Measurement tools (was DEFERRED, now active)
 
   # Story C.7: DELETED (merged into C.1a)
   # Story C.8: TARP Bidirectional Cascade (NO CHANGES - blocked by C.13)
