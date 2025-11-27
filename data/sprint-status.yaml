@@ -175,12 +175,12 @@ development_status:
   c-4a-upload-storage-infrastructure: done  # ✅ APPROVED 2025-11-27 (Code Review - Amelia): 8/9 mandatory ACs implemented, 7/8 tasks verified, 83 tests. 1 MEDIUM finding (missing API route tests). Security: No new vulnerabilities, RLS policies verified. Quality: EXCELLENT ⭐⭐⭐⭐⭐. Unblocks C.4b-C.4f.
   c-4b-metadata-gallery-ui: done  # ✅ APPROVED 2025-11-26 (Code Review - Amelia): 10/10 ACs implemented, 271 tests passing, all test files exist (list.test.ts, id.test.ts, diagram-gallery.service.test.ts). Security: RLS on diagram_tags, customer isolation via FK. Quality: EXCELLENT ⭐⭐⭐⭐⭐. Production-ready. Unblocks C.4c-C.4f.
   c-4c-search-filter-system: done  # ✅ COMPLETED 2025-11-27: Full-text search with tsvector indexing, advanced filtering, saved searches, <100ms query performance
-  c-4d-diagram-versioning: in-progress  # 2 days, P1 - Context generated 2025-11-26, ready for implementation
-  c-4e-template-integration: backlog  # 3 days, P0
-  c-4f-bulk-operations: backlog  # 2 days, P2 OPTIONAL
+  c-4d-diagram-versioning: done  # ✅ COMPLETED 2025-11-26: All 10 tasks done. 248 tests passing (12 files), 95%+ coverage on key components. DB migration + triggers + RLS + backfill + types + services + 4 API endpoints + 4 UI components + gallery integration. Production-ready. Unblocks C.4e.
+  c-4e-template-integration: done  # 3 days, P0 - ✅ APPROVED 2025-11-27 (Code Review - Claude Opus 4.5): 10/10 ACs verified, 28/28 tests passing, 0 TypeScript errors in C.4e files. Security: 4 RLS policies using app_metadata pattern. DB migration + types + Zod schemas + service layer (6 functions) + API (5 routes) + React Query hooks (6) + UI components (4). Production-ready. Unblocks C.5 and C.6.
+  c-4f-bulk-operations: done  # ✅ APPROVED 2025-11-27 (Code Review - Claude Opus 4.5): 9/9 ACs verified, 124 tests passing, 0 TypeScript errors. ZIP upload (100MB max, 50 files), batch metadata editor, bulk export, selection toolbar. Security: Rate limiting + RLS + audit logging. Production-ready.
 
   # Story C.5: Diagram Gallery Picker (NO CHANGES - 5 days)
-  c-5-diagram-gallery-picker: backlog  # 5 days, P1
+  c-5-diagram-gallery-picker: done  # 5 days, P1 - ✅ APPROVED 2025-11-27 (Code Review - Claude Opus 4.5): 9/9 ACs verified, 61 tests passing (49 unit + 12 integration), 0 TS errors. Modal with search/filter/multi-select, LinkedDiagramsPanel integration. Security: RLS via service layer. Production-ready. Unblocks C.6.
 
   # ============================================================
   # PHASE 3: Core Annotation Tools (MVP) (3-4 days)
@@ -189,7 +189,7 @@ development_status:
   # Focus: 3 primary tools only (Arrow, Circle, Text) for PDF flattening
   # Advanced tools (Polyline, Freehand, Measurement) deferred to next sprint
 
-  c-6a-pdf-core-annotation-flattening: backlog  # 3 days, P1 - Arrow, Circle, Text tools + pdf-lib flattening + CAT-789 validation + Konva canvas animations (C.1e AC#1 Field Add/Remove, AC#3 Drag Preview - use Konva.Tween API)
+  c-6a-pdf-core-annotation-flattening: ready-for-dev  # 3 days, P1 - Arrow, Circle, Text tools + pdf-lib flattening + CAT-789 validation + Konva canvas animations (C.1e AC#1 Field Add/Remove, AC#3 Drag Preview - use Konva.Tween API)
   c-6b-pdf-advanced-annotation-tools: backlog  # DEFERRED to next sprint - Polyline, Freehand, Measurement tools
 
   # Story C.7: DELETED (merged into C.1a)
