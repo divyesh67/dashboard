@@ -193,8 +193,8 @@ development_status:
   c-6b-pdf-advanced-annotation-tools: done  # ✅ DONE 2025-11-27: All review follow-ups resolved. 145 tests passing. Canvas integration, polyline edit mode, measurement UX, touch gestures complete.
 
   # Story C.7: DELETED (merged into C.1a)
-  # Story C.8: TARP Bidirectional Cascade (NO CHANGES - blocked by C.13)
-  c-8-tarp-bidirectional-cascade: backlog  # Blocked by C.13
+  # Story C.8: TARP Bidirectional Cascade
+  c-8-tarp-bidirectional-cascade: done  # ✅ DONE 2025-11-28: TARP bidirectional cascade system complete. 160 tests (96 web + 64 Flutter). Service layer, store slice, Flutter integration, audit trail.
 
   # Story C.9: MERGED into C.8
   # Story C.10: JSON Schema Foundation (NO CHANGES - 2 days)
@@ -202,17 +202,17 @@ development_status:
 
   # Story C.11: MERGED into C.1a (Immer Middleware)
   # Story C.12: Runtime Validation (NO CHANGES - 3 days)
-  c-12-runtime-validation: in-progress  # 3 days, P0, ✅ Context generated 2025-11-27 - Debounced validation, inline errors, section summaries, publish gate. Review fixes applied 2025-11-27: validateField for blur, auto section aggregation, validationMode persistence, UI perf tests.
+  c-12-runtime-validation: done  # ✅ DONE 2025-11-28: 157 tests pass, all 9 ACs met. SectionValidationSummary wired with jump-to-field, performance telemetry via getPerformanceMetrics().
 
   # Story C.13: Flutter Schema Adapter (2 days → 3 days)
   # OFFLINE-FIRST: Added template caching + Isolate parsing (AC-C.13.10-14)
-  c-13-flutter-schema-adapter: backlog  # 2 days → 3 days (+1 for template caching + Isolate), P0 CRITICAL, Blocked by C.12
+  c-13-flutter-schema-adapter: done  # ✅ DONE 2025-11-28: All 12 ACs implemented, 230 tests passing (112 Flutter + 118 Web). Database migrations verified. Production-ready.
 
   # Story C.13.1: Dual-Schema Migration (NO CHANGES - 2 days)
-  c-13-1-dual-schema-migration: backlog  # 2 days, P0, Blocked by C.13
+  c-13-1-dual-schema-migration: done  # ✅ DONE 2025-11-28: All 8 ACs met, 33 tests passing. Migration scripts ready for production execution.
 
   # Story C.14: Conditional Logic (NO CHANGES - 5 days)
-  c-14-conditional-logic: backlog  # 5 days, P1, Blocked by C.13
+  c-14-conditional-logic: done  # ✅ APPROVED 2025-11-28: All 8 ACs implemented, 141 tests passing. Cross-platform JSONLogic engine complete.
 
   # Story C.15: Biometric Authentication (NO CHANGES - 3 days)
   c-15-biometric-authentication: backlog  # 3 days, P2, Blocked by C.14
