@@ -215,22 +215,22 @@ development_status:
   c-14-conditional-logic: done  # ✅ APPROVED 2025-11-28: All 8 ACs implemented, 141 tests passing. Cross-platform JSONLogic engine complete.
 
   # Story C.15: Biometric Authentication (NO CHANGES - 3 days)
-  c-15-biometric-authentication: backlog  # 3 days, P2, Blocked by C.14
+  c-15-biometric-authentication: done  # ✅ DONE 2025-11-28: Biometric authentication for offline unlock. 8 integration tests passing. All HIGH review findings resolved.
 
   # Story C.16: Equipment Admin Panel (NO CHANGES - 5 days)
-  c-16-equipment-admin-panel: backlog  # 5 days, P0 - Epic B1 COMPLETE, NOW UNBLOCKED
+  c-16-equipment-admin-panel: done  # ✅   REVIEW Done 2025-11-28: All 6 ACs implemented, 20 tests passing. Excel import, diagram linking, attribute library, drag-drop tree. See c-16-implementation-summary.md for details.
 
   # Story C.17: Hierarchical Inspection Table (SPLIT into 4 substories - 9 days → 11 days total)
   # OFFLINE-FIRST: Added component caching (330 items), delta sync (AC-C.17c.8-11) to C.17c
-  c-17a-field-schema-backend-api: backlog  # 2 days, P0, Blocked by C.16
-  c-17b-column-builder-web: backlog  # 3 days, P0
-  c-17c-mobile-responsive-table: backlog  # 2 days → 4 days (+2 for component caching), P0 CRITICAL - Offline component picker, 330-item cache
-  c-17d-epic-b1-integration: backlog  # 2 days, P0
+  c-17a-field-schema-backend-api: done  # ✅ APPROVED 2025-11-29: All 7 ACs implemented. DB migration (20251128_003), Zod v4 schemas (33 tests), 6 API endpoints with caching, findings API (POST/GET), service layer, TypeScript types. 51 tests total (33 unit + 18 integration). Code review passed.
+  c-17b-column-builder-web: done  # ✅ APPROVED 2025-11-29: All 6 ACs implemented. 78 tests passing. EquipmentTemplateSelector, ColumnBuilderModal, ColumnConfigModal, SelectionMethodToggles. Code review passed.
+  c-17c-mobile-responsive-table: done  # ✅ APPROVED 2025-11-29: All 6 ACs implemented. HierarchicalComponentSelector (3 modes: dropdown, diagram, QR), HierarchicalDataTable (inline editing, column toggle, reorder), OfflineHierarchyService (330+ component cache), HierarchicalFindingsSyncService. 25+ widget tests, 15+ service tests.
+  c-17d-epic-b1-integration: done  # ✅ COMPLETED 2025-11-29: All 8 tasks done. Database indexes (7 new), hierarchy APIs (2 routes), React Query caching (5-min stale), cursor-based pagination, performance tests (<100ms targets), integration tests, E2E workflow tests. Redis caching N/A (no infrastructure). See c-17d-implementation-summary.md.
 
   # Story C.18: DELETED (QR Code removed per Sprint Change Proposal 2025-11-17)
   # Story C.19: TYROON Excel Import (SPLIT into 5 substories - 12 days total)
-  c-19a-excel-parser-validation: backlog  # 3 days, P0, Blocked by C.16
-  c-19b-import-preview-ui: backlog  # 2 days, P0
+  c-19a-excel-parser-validation: done  # ✅ APPROVED 2025-11-29: All 7 ACs implemented, 28 tests passing. TYROONExcelParserService (singleton, DI), TYROONSchemaDetector (flexible column matching), ExcelValidationService (4 severity levels), performance 14ms/330 rows, 31ms/1000 rows.
+  c-19b-import-preview-ui: in-progress  # 2 days, P0 - Context generated 2025-11-29
   c-19c-import-execution-conflict: backlog  # 3 days, P0
   c-19d-excel-export-roundtrip: backlog  # 2 days, P1
   c-19e-error-handling-testing: backlog  # 2 days, P0 MANDATORY
