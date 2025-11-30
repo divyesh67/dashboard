@@ -230,10 +230,10 @@ development_status:
   # Story C.18: DELETED (QR Code removed per Sprint Change Proposal 2025-11-17)
   # Story C.19: TYROON Excel Import (SPLIT into 5 substories - 12 days total)
   c-19a-excel-parser-validation: done  # ✅ APPROVED 2025-11-29: All 7 ACs implemented, 28 tests passing. TYROONExcelParserService (singleton, DI), TYROONSchemaDetector (flexible column matching), ExcelValidationService (4 severity levels), performance 14ms/330 rows, 31ms/1000 rows.
-  c-19b-import-preview-ui: in-progress  # 2 days, P0 - Context generated 2025-11-29
-  c-19c-import-execution-conflict: backlog  # 3 days, P0
-  c-19d-excel-export-roundtrip: backlog  # 2 days, P1
-  c-19e-error-handling-testing: backlog  # 2 days, P0 MANDATORY
+  c-19b-import-preview-ui: done  # ✅ APPROVED 2025-11-29: All 6 ACs implemented, 60 tests passing (exceeding 12+ requirement). Modular components (Summary, Groups, Form, Buttons), Zod validation, backward compatible. 38 NEW tests added.
+  c-19c-import-execution-conflict: review  # 3 days, P0 - Ready for review 2025-11-30
+  c-19d-excel-export-roundtrip: done  # ✅ APPROVED 2025-11-29 (Code Review - Amelia): All 8 ACs implemented, 27 tests passing. Performance exceeded targets by 200x+. Production-ready export service with round-trip validation.
+  c-19e-error-handling-testing: done  # 3-4 days, P0 MANDATORY - CAPSTONE: Epic C Quality Gate + Robustness Testing
 
   epic-c-retrospective: optional
   # ============================================================
