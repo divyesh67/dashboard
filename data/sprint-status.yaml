@@ -269,18 +269,18 @@ development_status:
   # Phase 2: P1 HIGH - Feature Completion (Days 9-16)
   # ============================================================
 
-  c1-7-web-keyboard-accessibility: backlog  # 2-3 days, P1 HIGH, Audit 8.1-8.4 - Ctrl+S/Z/Y, Error Boundaries, ARIA
-  c1-8-web-drag-drop-fix: backlog  # 2-3 days, P1 HIGH, Audit 9.1-9.2 - Palette useDraggable, animation variants
-  c1-9-web-repeatable-sections-runtime: backlog  # 3-4 days, P1 HIGH, Audit 10.1, 10.3, 10.4 - "Add Another" button, min/max validation
-  c1-10-web-template-assignment: backlog  # 3-4 days, P1 HIGH, Audit 11.1-11.6 - Access panel, bulk API, usage count
-  c1-11-web-version-rollback-fix: backlog  # 2-3 days, P1 HIGH, Audit 3.3, 7.1 - Version selector, remove window.reload()
+  c1-7-web-keyboard-accessibility: done  # 2-3 days, P1 HIGH, Audit 8.1-8.4 - Ctrl+S/Z/Y, Error Boundaries, ARIA - 43/43 tests passing
+  c1-8-web-drag-drop-fix: done  # 2-3 days, P1 HIGH, Audit 9.1-9.2 - Palette useDraggable, animation variants - 31/31 tests passing
+  c1-9-web-repeatable-sections-runtime: done  # 3-4 days, P1 HIGH, Audit 10.1, 10.3, 10.4 - "Add Another" button, min/max validation - ✅ APPROVED 2025-12-01 (Code Review): 1 HIGH + 3 MEDIUM issues FIXED. 60/60 tests passing. H1 (stale props), M1 (any casts), M2 (ID generation), M3 (console.warn) all resolved.
+  c1-10-web-template-assignment: done  # ✅ DONE 2025-12-01 (Amelia Dev): Access panel, bulk API, usage count RPC, template duplication. 54 tests, 83%+ coverage.
+  c1-11-web-version-rollback-fix: done  # 2-3 days, P1 HIGH, Audit 3.3, 7.1 - Version selector, remove window.reload() ✅ IMPLEMENTED 2025-12-01
 
   # ============================================================
   # Phase 3: P2 MEDIUM - Performance & Architecture (Days 17-24)
   # ============================================================
 
-  c1-12-web-konva-performance: backlog  # 3-4 days, P2 MEDIUM, Audit 4.1 - Decouple DND-kit, native draggable, 60fps target
-  c1-13-web-state-management-cleanup: backlog  # 3-4 days, P2 MEDIUM, Audit 7.2-7.4, 16.1-16.4 - useState consolidation, useEffect cleanup, sliced store
+  c1-12-web-konva-performance: done  # ✅ DONE 2025-12-01 - Hybrid drag architecture (DND-Kit for palette, Konva native for canvas), imperative guides, FPS tracking. 23/23 tests pass.
+  c1-13-web-state-management-cleanup: drafted  # 3-4 days, P2 MEDIUM, Audit 7.2-7.4, 16.1-16.4 - useState consolidation, useEffect cleanup, sliced store - DRAFTED 2025-12-01
 
   # ============================================================
   # Phase 4: P3 LOW - Code Quality (Days 25-28)
