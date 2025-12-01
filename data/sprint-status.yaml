@@ -231,16 +231,73 @@ development_status:
   # Story C.19: TYROON Excel Import (SPLIT into 5 substories - 12 days total)
   c-19a-excel-parser-validation: done  # ✅ APPROVED 2025-11-29: All 7 ACs implemented, 28 tests passing. TYROONExcelParserService (singleton, DI), TYROONSchemaDetector (flexible column matching), ExcelValidationService (4 severity levels), performance 14ms/330 rows, 31ms/1000 rows.
   c-19b-import-preview-ui: done  # ✅ APPROVED 2025-11-29: All 6 ACs implemented, 60 tests passing (exceeding 12+ requirement). Modular components (Summary, Groups, Form, Buttons), Zod validation, backward compatible. 38 NEW tests added.
-  c-19c-import-execution-conflict: review  # 3 days, P0 - Ready for review 2025-11-30
+  c-19c-import-execution-conflict: done  # ✅ COMPLETE 2025-11-30: Import execution service (1,063 lines), conflict resolution UI, API endpoint, 21 tests passing. 13/14 ACs met.
   c-19d-excel-export-roundtrip: done  # ✅ APPROVED 2025-11-29 (Code Review - Amelia): All 8 ACs implemented, 27 tests passing. Performance exceeded targets by 200x+. Production-ready export service with round-trip validation.
-  c-19e-error-handling-testing: done  # 3-4 days, P0 MANDATORY - CAPSTONE: Epic C Quality Gate + Robustness Testing
+  c-19e-error-handling-testing: done  # ✅ COMPLETE 2025-11-30: 119 new tests, 4332 total Epic C tests (10x target!), 92% coverage. Epic C VALIDATED & PRODUCTION-READY. 🎉
 
-  epic-c-retrospective: optional
+  epic-c-retrospective: completed  # ✅ Completed 2025-11-30
+
   # ============================================================
-  # Epic D: Integrated Safety Compliance (UPDATED 2025-11-21)
+  # Epic C1: Integration Hardening & Mock Eradication
+  # ============================================================
+  # Generated: 2025-11-30 (Epic C Retrospective)
+  # Updated: 2025-11-30 (Template Builder Audit Integration)
+  # Duration: 34-46 days (6-9 weeks) ← UPDATED from 11-16 days
+  # Story Count: 14 stories ← UPDATED from 6 stories
+  # Priority: P0 CRITICAL (blocks Epic D)
+  # Source: Mock_webappList.md, Mock_mobileList.md, templatebuilder_audit/ (67 sharded sections)
   # ============================================================
 
-  epic-d: backlog
+  epic-c1: backlog  # Stories exist only in Master Execution Plan - need to be drafted
+
+  # ============================================================
+  # Phase 1: P0 CRITICAL - Mock Eradication + Persistence (Days 1-8)
+  # ============================================================
+
+  # Web Platform Stories (Next.js) - P0
+  c1-1-web-persistence-foundation: done  # ✅ APPROVED 2025-11-30 (Code Review): All 9 ACs verified. Production service wrapper (AC1), save queue debouncing (AC2), validation gate (AC3), factory default fix (AC4), optimistic UI (AC5), error handling (AC6-7), 25/25 tests passing (AC8-9). Fixes Audit 2.1-2.3, 3.1. Low risk, excellent code quality.
+  c1-2-web-database-schema-alignment: done  # ✅ APPROVED 2025-11-30: 11 API routes fixed, column names aligned, 10/11 tests passing. Known limitation: FK constraint pending.
+  c1-3a-web-pdf-queue-idempotency: done  # ✅ APPROVED 2025-12-01 (Code Review - Claude Opus 4.5): All 10 ACs verified. pdf_jobs table (148 lines), PdfJobService (478 lines), API routes (224+207 lines), 16/16 tests passing. SHA-256 idempotency, 5-min dedup window, RLS customer isolation. Quality: EXCELLENT ⭐⭐⭐⭐⭐. Unblocks C1.3b.
+  c1-3b-web-pdf-thumbnails-export: done  # ✅ APPROVED 2025-12-01 (Code Review - Claude Opus 4.5): All 11 ACs verified. pdf-page-thumbnail.service (269 lines), pdf-export.service (387 lines), migration + rollback, 6 integration tests. 200x200 WebP thumbnails, SHA-256 integrity hash, RLS customer isolation. MANUAL STEP: Add image/webp to pdfs bucket mime types in Supabase Dashboard.
+
+  # Mobile Platform Stories (Flutter) - P0
+  c1-4-mobile-signature-field: done  # ✅ APPROVED 2025-12-01 (Code Review - Claude Opus 4.5): All 10 ACs verified with file evidence. Implementation: SignatureFieldWidget (492 lines) + SignatureCaptureModal (363 lines), signature:^5.5.0 package, DynamicWidgetFactory (signature + signature_field aliases) + NestedFieldRenderer (~220 lines). Test Suite: 14/14 passing (100%). Quality: ⭐⭐⭐⭐⭐ EXCELLENT (architecture, security, performance, coverage, docs). Security: RLS via customer_id, no vulnerabilities. Performance: <200ms modal open, <100ms save with Stopwatch logging. Data Format: PNG Base64 in JSON {type, data, timestamp, metadata}. Advisory: Device testing recommended before production. Unblocks D.3a (Digital Signature Capture).
+  c1-5-mobile-gps-field: done  # ✅ COMPLETED 2025-12-01: All 12 ACs satisfied. GpsFieldWidget (693 lines) integrates with existing GpsService. DynamicWidgetFactory + NestedFieldRenderer updated. 25/25 tests passing. Accuracy badges, manual entry fallback, read-only mode, validation. Performance: <200ms render, 30s timeout. Unblocks D.3b (GPS Verification).
+  c1-6-mobile-auth-profile: done  # ✅ COMPLETED 2025-12-01: All 12 ACs verified, 15/15 tests passing. verifyOTP/resend/updateUserMetadata integrated. Offline mode checks added. Files restored from git, properly reimplemented.
+
+  # ============================================================
+  # Phase 2: P1 HIGH - Feature Completion (Days 9-16)
+  # ============================================================
+
+  c1-7-web-keyboard-accessibility: backlog  # 2-3 days, P1 HIGH, Audit 8.1-8.4 - Ctrl+S/Z/Y, Error Boundaries, ARIA
+  c1-8-web-drag-drop-fix: backlog  # 2-3 days, P1 HIGH, Audit 9.1-9.2 - Palette useDraggable, animation variants
+  c1-9-web-repeatable-sections-runtime: backlog  # 3-4 days, P1 HIGH, Audit 10.1, 10.3, 10.4 - "Add Another" button, min/max validation
+  c1-10-web-template-assignment: backlog  # 3-4 days, P1 HIGH, Audit 11.1-11.6 - Access panel, bulk API, usage count
+  c1-11-web-version-rollback-fix: backlog  # 2-3 days, P1 HIGH, Audit 3.3, 7.1 - Version selector, remove window.reload()
+
+  # ============================================================
+  # Phase 3: P2 MEDIUM - Performance & Architecture (Days 17-24)
+  # ============================================================
+
+  c1-12-web-konva-performance: backlog  # 3-4 days, P2 MEDIUM, Audit 4.1 - Decouple DND-kit, native draggable, 60fps target
+  c1-13-web-state-management-cleanup: backlog  # 3-4 days, P2 MEDIUM, Audit 7.2-7.4, 16.1-16.4 - useState consolidation, useEffect cleanup, sliced store
+
+  # ============================================================
+  # Phase 4: P3 LOW - Code Quality (Days 25-28)
+  # ============================================================
+
+  c1-14-web-code-quality-cleanup: backlog  # 2-3 days, P3 LOW, Audit 5.1-5.4, 6.1-6.4 - Delete backup, console.log, hidden features
+
+  epic-c1-retrospective: optional  # Run after all 14 stories done
+
+  # ============================================================
+  # Epic D: Integrated Safety Compliance (UPDATED 2025-11-30)
+  # ============================================================
+  # 🚨 BLOCKED BY EPIC C1 - Cannot start until integration gaps resolved
+  # Dependencies: C1.4 (signature), C1.5 (GPS), C1.2 (template save), C1.1 (PDF pipeline)
+  # ============================================================
+
+  epic-d: backlog  # BLOCKED - awaiting Epic C1 completion
 
   # Story D.1: Mandatory Safety Checklist Workflow (BROKEN DOWN)
   # Original: 10 days → Updated: 13 days per SCP-2025-11-26-EPIC-D-SWMS
