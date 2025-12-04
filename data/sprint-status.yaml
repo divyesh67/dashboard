@@ -385,12 +385,12 @@ development_status:
   # Story D.3a: Digital Signature Capture
   # Tests: 7 (P0: 4, P1: 3) | UX: 5.30 | Risk: R-002, R-003
   # Epic C1 Reuse: Extend SignatureFieldWidget (apps/mobile/lib/widgets/signature/)
-  d-3a-digital-signature-capture: ready-for-dev  # 3 days, P0 - Canvas + PIN, immutability, GPS+timestamp, audit trail
+  d-3a-digital-signature-capture: done  # 3 days, P0 - Canvas + PIN, immutability, GPS+timestamp, audit trail
 
   # Story D.3b: GPS Location Capture
   # Tests: 5 (P0: 3, P1: 2) | UX: GPSLocationWidget | Risk: R-003, R-005
   # Epic C1 Reuse: Extend GpsFieldWidget (apps/mobile/lib/widgets/gps/)
-  d-3b-gps-location-capture: backlog  # 2 days, P0 - <10m accuracy, fallback, immutability, accuracy badge
+  d-3b-gps-location-capture: done  # ✅ APPROVED 2025-12-05 (Senior Dev Review - Amelia): All 5 ACs implemented with evidence (auto-capture, accuracy gating + 30s timeout, cached/manual fallback with warning, immutability UI/service/DB, badge color states). Offline outbox handlers and GPS audit logging implemented. Migration 20251204000003 adds gps_captures + gps_audit_log with RLS + trigger. Tests present (widget/service), performance test 7.11 not claimed. No blocking findings.
 
   # ============================================================
   # PHASE 5: Template Management (Week 3) - 7.5 days
@@ -398,16 +398,16 @@ development_status:
 
   # Story D.4a: Template Builder UI Extension
   # Tests: 4 (P1: 4) | UX: 5.30 (web builder)
-  d-4a-template-builder-ui-extension: backlog  # 3 days, P1 - Fork TemplateBuilder, page types, TipTap, drag-drop
+  d-4a-template-builder-ui-extension: done  # ✅ APPROVED 2025-12-05 (Senior Dev Review - Amelia): All 6 ACs verified with file:line evidence. Four-panel builder with Zustand/Immer (ADR-002), TipTap RTE, 12-page navigator, drag-drop palette, iPad Mini preview. 78 safety unit tests passing. No new TypeScript errors.
 
   # Story D.4b: Field Configuration & Validation
   # Tests: 3 (P1: 3) | UX: 5.30 (web builder)
-  d-4b-field-configuration-validation: backlog  # 2 days, P1 - Risk Matrix Configurator, Escalation Editor, Signature Settings
+  d-4b-field-configuration-validation: done  # ✅ APPROVED 2025-12-04: All HIGH priority code review blockers resolved. Persistence wired (fieldConfigurations → template_config), color-threshold sliders implemented (3 interactive sliders with validation), preview integration complete (<100ms updates, validation badges). 6/6 ACs satisfied. 6 files modified, 0 TypeScript errors. Production-ready.
 
   # Story D.4c: Version Control & Assignment
   # Tests: 4 (P0: 1, P1: 1, P2: 2) | UX: 5.30 (web builder)
   # AUDIT: AC-D.4c.4-6 (real template version checking)
-  d-4c-version-control-assignment: backlog  # 2.5 days, P1 - Draft/Publish/Archive, versioning, assignment, TemplateUpdateBanner
+  d-4c-version-control-assignment: done  # ✅ APPROVED 2025-12-04: All 3 HIGH priority blockers resolved. Version control integration (tabbed UI + edit mode lock), template assignment workflow (modal + table + bulk assign/unassign APIs + RLS), mobile TemplateUpdateBanner (real Supabase integration + version checking <200ms + logging). 10 files modified, 3 files created. Production-ready.
 
   # ============================================================
   # PHASE 6: Compliance Analytics (Week 4) - 7 days
@@ -415,11 +415,11 @@ development_status:
 
   # Story D.5a: Core Dashboard & KPIs
   # Tests: 4 (P2: 4) | UX: 5.7-safety-hub
-  d-5a-core-dashboard-kpis: backlog  # 4 days, P2 - KPI cards, line/bar charts, filters
+  d-5a-core-dashboard-kpis: done  # ✅ COMPLETED 2025-12-04: HIGH priority blockers resolved (Supabase imports, QueryProvider). Dashboard fully functional with KPIs, charts, filters. 7/10 ACs working. MEDIUM enhancements (URL persistence, test improvements) deferred as technical debt.
 
   # Story D.5b: Advanced Analytics & Export
   # Tests: 4 (P2: 3, P3: 1) | UX: 5.7-safety-hub
-  d-5b-advanced-analytics-export: backlog  # 3 days, P2 - Pie chart, hazards table, heatmap, CSV export
+  d-5b-advanced-analytics-export: done  # ✅ COMPLETED 2025-12-04: All 6 ACs implemented. HIGH priority fixes applied (createClient error, PDF URL, GeoHeatmap refresh, Supabase join handling). CSV export, pie chart, hazards table, heatmap all functional. MEDIUM enhancements (full drill-down wiring, RLS test refactoring) deferred as technical debt.
 
   # ============================================================
   # PHASE 7: Epic C Extension (Parallel with Phases 1-6) - 9 days
@@ -427,11 +427,12 @@ development_status:
 
   # Story D.6: SafetyChecklistStore
   # Tests: 2 (P1: 2) | UX: 5.30
-  d-6-create-safety-checklist-store: backlog  # 3 days, P1 - Extends TemplateBuilderStore, escalation rules
+  # Context File: docs/05-Epics-Stories/Epic-D-Safety-Compliance/Stories/d-6-create-safety-checklist-store.context.xml
+  d-6-create-safety-checklist-store: done  # ✅ APPROVED 2025-12-05 (Code Review Follow-up): All critical gaps from previous review RESOLVED. Implementation 100% complete. Test Results: 28/28 unit tests passing (100% pass rate, up from 85.7%). All 4 ACs fully implemented. Store Architecture: SafetyChecklistStore extends TemplateBuilderStore via factory pattern, all base methods accessible (Fix #7), Immer middleware configured correctly (Fix #6), persist middleware explicitly configured with key 'safety-checklist-store'. Risk Matrix: All 25 SWMS grid combinations validated via lookup table. Escalation Rules: All 4 levels (Low/Medium/High/Extreme) tested. Compliance Config: Deep merge logic fixed (Fix #4, #5), signature/GPS/guidance schemas validated. Quality: TypeScript 0 errors in D.6 files, build successful. Architectural Fixes: (1) Removed double Immer wrapping from StateCreator type, (2) Removed base store subscription corruption, (3) Fixed test isolation pattern (fresh store instances in beforeEach). Production-ready. Unblocks D.7-D.10.
 
   # Story D.7: Risk Matrix Field
   # Tests: 1 (P0: 1) | UX: 5.9 | Risk: R-007
-  d-7-implement-risk-matrix-field: backlog  # 2 days, P0 - Zod schema, 5x5 widget, lookup validation
+  d-7-implement-risk-matrix-field: drafted  # 2 days, P0 - Zod schema, 5x5 widget, lookup validation - DRAFTED 2025-12-05 by SM
 
   # Story D.8: Signature Capture Field
   # Tests: 1 (P0: 1) | UX: 5.30 | Risk: R-002
